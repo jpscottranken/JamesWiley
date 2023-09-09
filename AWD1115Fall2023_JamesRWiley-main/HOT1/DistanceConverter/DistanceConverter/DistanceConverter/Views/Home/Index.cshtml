@@ -1,0 +1,22 @@
+﻿@model DistanceConverter
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <div>
+        <label asp-for="DistanceInInches">Distance In Inches</label>
+    </div>
+    <div>
+        <input asp-for="DistanceInInches" />
+    </div>
+    <div>
+        <button type="submit">Convert to cm</button>
+    </div> 
+    <div>
+        <output></output>
+    </div>
+</form>
+
+

@@ -1,0 +1,40 @@
+﻿@model Quotation
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <div class="row form-group">
+        <label class="col-sm-3" asp-for="Subtotal">Subtotal</label>
+        <div class="col-sm-4">
+        <input class="form-control" asp-for="Subtotal" />
+        </div>
+        <span class="col-sm text-danger" asp-validation-for="Subtotal" />
+    </div>
+    <div class="row form-group">
+        <label class="col-sm-3" asp-for="DiscountPercent">Discount Percent</label>
+        <div class="col-sm-4">
+        <input asp-for="DiscountPercent" />
+        <span class="col-sm text-danger" asp-validation-for="DiscountPercent" />
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="col-sm-3">Discount Amount</label>
+        <label class="col-sm-4">@ViewBag.Discount.ToString("c2")</label>
+    </div>
+    <div>
+        <div class="row form-group">
+            <label class="col-sm-3">Total</label>
+            <label class="col-sm-4">@ViewBag.Total.ToString("c2")</label>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+            <button class="btn btn-success" type="submit">Calculate</button>
+            <a class="btn btn-success ml-2" asp-controller="Home" asp-action="Index">Clear</a>
+        </div>
+    </div>
+
+</form>
+
